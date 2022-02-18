@@ -1,0 +1,87 @@
+$color-blue: #6ecba1;
+$color-green: #d2d28b;
+$color-salmon: salmon;
+$color-beige: #f0e5c1;
+$color-yellow: #ebbe9e;
+
+body {
+  background-color: $color-yellow;
+  display: grid;
+  font: 2vw system-ui;
+  margin: 0;
+  height: 100vh;
+  place-items: center;
+  width: 100%;
+
+  .box {
+    &__message {
+      animation: float 5s ease-in-out infinite;
+      background-color: $color-beige;
+      border: 1px solid $color-green;
+      border-radius: 11px;
+      box-shadow: 20px 20px $color-blue;
+      color: $color-salmon;
+      font-family: "Baloo 2", cursive;
+      font-size: 2em;
+      font-weight: bold;
+      letter-spacing: 3px;
+      mix-blend-mode: multiply;
+      padding: 50px;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+      transform: translatey(0px);
+
+      &:after {
+        animation: float2 5s ease-in-out infinite;
+        background-color: $color-beige;
+        border: 1px solid $color-green;
+        border-radius: 11px;
+        bottom: -30px;
+        box-shadow: 22px 22px $color-blue;
+        content: ".";
+        display: block;
+        font-size: 55px;
+        font-weight: bold;
+        height: 11px;
+        left: 0;
+        line-height: 30px;
+        position: absolute;
+        text-shadow: 22px 22px $color-blue;
+        text-align: left;
+        transform: translatey(0px);
+        width: 55px;
+        z-index: -2;
+      }
+    }
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    line-height: 30px;
+    transform: translatey(0px);
+  }
+  55% {
+    transform: translatey(-20px);
+  }
+  60% {
+    line-height: 10px;
+  }
+  100% {
+    line-height: 30px;
+    transform: translatey(0px);
+  }
+}
